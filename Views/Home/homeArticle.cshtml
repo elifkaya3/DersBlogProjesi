@@ -1,0 +1,15 @@
+﻿@model List<DersBlogPorjesi.Models.Article>
+@{
+    Layout = "_Layout";
+}
+
+<div class="card">
+    @foreach (var article in Model)
+     {
+         <div class="card-body" id="@article.ID">
+            <h5 class="card-title">@article.Header</h5>
+            <p class="card-text" >@article.Content</p>
+         </div>
+        
+     }
+</div>

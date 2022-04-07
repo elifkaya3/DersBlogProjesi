@@ -1,0 +1,21 @@
+﻿@model List<DersBlogPorjesi.Models.Lesson>
+
+<table class="table table-dark w-50 mx-auto" >
+    <tr>
+        <th>ID</th>
+        <th>Lesson Name</th>
+        <th>Category</th>
+    </tr>
+
+
+    @foreach (var lesson in Model)
+    {
+
+        <tr>
+            <td>@lesson.ID</td>
+            <td>@lesson.LessonName</td>
+            <td>@lesson.Category</td>
+        </tr>
+    }
+
+</table>

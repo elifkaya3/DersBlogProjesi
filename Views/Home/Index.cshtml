@@ -1,66 +1,80 @@
-﻿
+﻿@model List<DersBlogPorjesi.Models.Article>
 @{
     Layout = "_Layout";
 }
 
+@*Model view örneği*@
+@*<div class="container-fluid">
+        <div class="row">
+            @foreach (var article in Model)
+             {
+                <div class="col-sm-6">
+                    <div class="card mt-4">
+                        <div class="card-body">
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="card mt-4">
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur magnam vel deserunt facilis quae inventore doloribus molestias harum cumque corrupti facere omnis ducimus culpa illo quo repellat, blanditiis maxime? At nam corrupti quas nemo tenetur voluptatem temporibus! Consectetur laudantium, aut rerum labore omnis, iusto harum illo modi cumque ea qui neque!</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <h5 class="card-title">@article.Header</h5>
+                            <p class="card-text">@article.Content</p>
+                            <a href="#" class="btn btn-primary">Devamını oku...</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="card mt-4">
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur magnam vel deserunt facilis quae inventore doloribus molestias harum cumque corrupti facere omnis ducimus culpa illo quo repellat, blanditiis maxime? At nam corrupti quas nemo tenetur voluptatem temporibus! Consectetur laudantium, aut rerum labore omnis, iusto harum illo modi cumque ea qui neque! </p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="card mt-4">
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur magnam vel deserunt facilis quae inventore doloribus molestias harum cumque corrupti facere omnis ducimus culpa illo quo repellat, blanditiis maxime? At nam corrupti quas nemo tenetur voluptatem temporibus! Consectetur laudantium, aut rerum labore omnis, iusto harum illo modi cumque ea qui neque! </p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="card mt-4">
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur magnam vel deserunt facilis quae inventore doloribus molestias harum cumque corrupti facere omnis ducimus culpa illo quo repellat, blanditiis maxime? At nam corrupti quas nemo tenetur voluptatem temporibus! Consectetur laudantium, aut rerum labore omnis, iusto harum illo modi cumque ea qui neque! </p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="card mt-4">
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur magnam vel deserunt facilis quae inventore doloribus molestias harum cumque corrupti facere omnis ducimus culpa illo quo repellat, blanditiis maxime? At nam corrupti quas nemo tenetur voluptatem temporibus! Consectetur laudantium, aut rerum labore omnis, iusto harum illo modi cumque ea qui neque! </p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="card mt-4">
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur magnam vel deserunt facilis quae inventore doloribus molestias harum cumque corrupti facere omnis ducimus culpa illo quo repellat, blanditiis maxime? At nam corrupti quas nemo tenetur voluptatem temporibus! Consectetur laudantium, aut rerum labore omnis, iusto harum illo modi cumque ea qui neque! </p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
+             }
         </div>
     </div>
+*@
+
+@*İD ile veri çekip açmaya çalıştım elif*@
+@*<div class="container-fluid">
+        <div class="row">
+            @foreach (var article in Model)
+             {
+                <div class="col-sm-6">
+                    <div class="card mt-4">
+                        <div class="card-body">
+
+                            <h5 class="card-title">@article.Header</h5>
+                            <p class="card-text">@article.Content</p>
+                            <a href="#@article.ID" class="btn btn-primary">Devamını oku...</a>
+                        </div>
+                    </div>
+                </div>
+             }
+        </div>
+    </div>
+*@
+
+@*VİewBag kontrolü ile veri taşıma*@
+@*<div class="container-fluid">
+        <div class="row">
+            @foreach (var article in ViewBag.kml as List<DersBlogPorjesi.Models.Article>)
+            {
+                <div class="col-sm-6">
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <h5 class="card-title">@article.Header</h5>
+                            <p class="card-text">@article.Content</p>
+                            <a href="#" class="btn btn-primary">Devamını oku...</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+*@
+
+<div class="container-fluid">
+    <div class="row">
+        @foreach (var article in ViewData["kml"] as List<DersBlogPorjesi.Models.Article>)
+        {
+            <div class="col-sm-6">
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h5 class="card-title">@article.Header</h5>
+                        <p class="card-text">@article.Content</p>
+                        <a href="#" class="btn btn-primary">Devamını oku...</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

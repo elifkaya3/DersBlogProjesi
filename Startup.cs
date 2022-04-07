@@ -27,6 +27,8 @@ namespace DersBlogPorjesi
                 app.UseDeveloperExceptionPage();
             }
 
+                /* bu middleware sayesinde wwwroot klasörü statik dosyalarýmýz içinkulllanbilr hale getirilmesi*/
+            app.UseStaticFiles();
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
